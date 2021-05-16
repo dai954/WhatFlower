@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,13 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crJ-uw-jRI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="crJ-uw-jRI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="crJ-uw-jRI" secondAttribute="height" multiplier="1:1" id="mR9-3A-oXg"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ohS-xc-uHn">
+                                <rect key="frame" x="29" y="563" width="365" height="259"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.52941176469999995" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="crJ-uw-jRI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="29f-40-e1p"/>
+                            <constraint firstItem="ohS-xc-uHn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="5AB-GG-8AV"/>
+                            <constraint firstItem="ohS-xc-uHn" firstAttribute="top" secondItem="crJ-uw-jRI" secondAttribute="bottom" constant="61" id="Adg-Tv-G2X"/>
+                            <constraint firstAttribute="trailing" secondItem="crJ-uw-jRI" secondAttribute="trailing" id="l3J-6y-IRa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ohS-xc-uHn" secondAttribute="trailing" constant="20" id="tY7-zD-DWk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ohS-xc-uHn" secondAttribute="bottom" constant="40" id="yh4-OL-bZr"/>
+                            <constraint firstItem="crJ-uw-jRI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yzy-3l-Shi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O8e-Vu-j8J">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="dPS-2g-kXu">
@@ -33,6 +49,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="crJ-uw-jRI" id="S5h-ot-GTb"/>
+                        <outlet property="label" destination="ohS-xc-uHn" id="hKv-aD-CFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -47,6 +64,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S2T-ho-bPd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.58039215690000001" green="0.92156862750000001" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -58,9 +76,4 @@
             <point key="canvasLocation" x="-23.188405797101453" y="64.955357142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
